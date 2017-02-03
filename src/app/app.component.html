@@ -1,12 +1,3 @@
-<section class="betrayal-app">
-  <header class="header">
-    <h1>Characters</h1>
-  </header>
-  <section class="main" *ngIf="characters.length > 0">
-    <ul>
-      <li *ngFor="let character of characters">
-        <p>{{character.name}}</p>
-      </li>
-    </ul>
-  </section>
-</section>
+<div class="outer-outlet">
+  <router-outlet></router-outlet>
+</div>
