@@ -1,12 +1,49 @@
 <section class="betrayal-app">
-  <header class="header">
-    <h1>Characters</h1>
-  </header>
-  <section class="main" *ngIf="characters.length > 0">
-    <ul>
-      <li *ngFor="let character of characters">
-        <p>{{character.name}}</p>
-      </li>
-    </ul>
+  <section class="main">
+    <md-card *ngIf="characters.length > 0">
+      <md-grid-list cols="3">
+        <md-grid-tile-header>
+          <md-toolbar>Characters</md-toolbar>
+        </md-grid-tile-header>
+        <md-grid-tile *ngFor="let character of characters">
+          <md-card>
+            <md-card-title>{{character.name}}</md-card-title>
+            <md-card-subtitle>Birthday</md-card-subtitle>
+            <img style="width: 200px;" [src]="'../assets/' + character.picture">
+            <md-card-content></md-card-content>
+            <md-card-actions style="text-align: center;">
+              <button
+                md-raised-button
+                *ngIf="character.selected"
+                color="primary"
+                (click)="deselectCharacter(character.id)">
+                Selected
+              </button>
+              <button
+                md-raised-button
+                *ngIf="!character.selected"
+                (click)="selectCharacter(character.id)">
+                Select
+              </button>
+            </md-card-actions>
+          </md-card>
+        </md-grid-tile>
+      </md-grid-list>
+    </md-card>
+    <md-card>
+      <md-card-title>
+        <md-toolbar>Selected Characters</md-toolbar>
+      </md-card-title>
+      <md-card-content>
+        <md-list *ngIf="selectedCharacters.length > 0">
+          <md-list-item *ngFor="let selChar of selectedCharacters">
+
+          </md-list-item>
+        </md-list>
+        <md-list *ngIf="selectedCharacters.length === 0">
+          <md-list-item>None selected yet</md-list-item>
+        </md-list>
+      </md-card-content>
+    </md-card>
   </section>
 </section>

@@ -15,8 +15,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  selectCharacter(characterId: number) {
+    this.characterService.selectCharacter(characterId);
+  }
+
+  removeCharacter(characterId: number) {
+    this.characterService.deselectCharacter(characterId);
+  }
   get characters() {
     return this.characterService.getAllCharacters();
+  }
+
+  get selectedCharacters() {
+    return this.characterService.getSelectedCharacters();
   }
 
 }
