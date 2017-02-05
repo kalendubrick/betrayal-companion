@@ -12,6 +12,8 @@ export class CharacterService {
       id: 1,
       name: "Brandon Jaspers",
       color: "green",
+      picture: "brandon-jaspers.png",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -38,7 +40,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 2,
       name: "Peter Akimoto",
+      picture: "peter-akimoto.png",
       color: "green",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -65,7 +69,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 3,
       name: "Darrin 'Flash' Williams",
+      picture: "darrin-flash-williams.png",
       color: "red",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -92,7 +98,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 4,
       name: "Ox Bellows",
+      picture: "ox-bellows.png",
       color: "red",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -119,7 +127,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 5,
       name: "Father Rhinehardt",
+      picture: "father-rhinehardt.png",
       color: "white",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -146,7 +156,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 6,
       name: "Professor Longfellow",
+      picture: "professor-longfellow.png",
       color: "white",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -173,7 +185,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 7,
       name: "Heather Granville",
+      picture: "heather-granville.png",
       color: "purple",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -200,7 +214,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 8,
       name: "Jenny Leclerc",
+      picture: "jenny-leclerc.png",
       color: "purple",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -227,7 +243,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 9,
       name: "Madame Zostra",
+      picture: "madame-zostra.png",
       color: "blue",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -254,7 +272,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 10,
       name: "Vivian Lopez",
+      picture: "vivian-lopez.png",
       color: "blue",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -281,7 +301,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 11,
       name: "Missy Dubourde",
+      picture: "missy-dubourde.png",
       color: "orange",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -308,7 +330,9 @@ export class CharacterService {
     this.characters.push(new Character({
       id: 12,
       name: "Zoe Ingstrom",
+      picture: "zoe-ingstrom.png",
       color: "orange",
+      selected: false,
       attributes: [
         new Attribute({
           name: "Might",
@@ -348,17 +372,20 @@ export class CharacterService {
       .pop();
   }
 
-  addSelectedCharacter(id: number): void {
-    if (this.selectedCharacters.length <= 6) {
-      this.selectedCharacters.push(this.characters
-                                    .filter(character => character.id === id)
-                                    .pop());
+  selectCharacter(id: number): void {
+    const charIndex = this.characters
+                      .findIndex(c => c.id === id);
+    if (charIndex !== undefined) {
+      this.characters[charIndex].selected = true;
     }
   }
 
-  removeSelectedCharacter(id: number): void {
-    this.selectedCharacters = this.selectedCharacters
-                                .filter(character => character.id !== id);
+  deselectCharacter(id: number): void {
+    const charIndex = this.characters
+                      .findIndex(c => c.id === id);
+    if (charIndex !== -1) {
+      this.characters[charIndex].selected = false;
+    }
   }
 
 }

@@ -4,6 +4,7 @@ export class Character {
     id: number;
     name: string;
     color: string;
+    selected: boolean;
     attributes: Attribute[];
 
     constructor(values: Object = {}) {
