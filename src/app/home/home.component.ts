@@ -16,11 +16,13 @@ export class HomeComponent implements OnInit {
   }
 
   selectCharacter(characterId: number) {
-    this.characterService.selectCharacter(characterId);
+    if (this.selectedCharacters.length <= 6) {
+      this.characterService.toggleCharacter(characterId);
+    }
   }
 
   removeCharacter(characterId: number) {
-    this.characterService.deselectCharacter(characterId);
+    this.characterService.toggleCharacter(characterId);
   }
   get characters() {
     return this.characterService.getAllCharacters();
