@@ -16,7 +16,7 @@
                 md-raised-button
                 *ngIf="character.selected"
                 color="primary"
-                (click)="deselectCharacter(character.id)">
+                (click)="removeCharacter(character.id)">
                 Selected
               </button>
               <button
@@ -35,12 +35,12 @@
         <md-toolbar>Selected Characters</md-toolbar>
       </md-card-title>
       <md-card-content>
-        <md-list *ngIf="selectedCharacters.length > 0">
+        <md-list *ngIf="selectedCharacters && selectedCharacters.length > 0">
           <md-list-item *ngFor="let selChar of selectedCharacters">
-
+            {{ selChar.name }}
           </md-list-item>
         </md-list>
-        <md-list *ngIf="selectedCharacters.length === 0">
+        <md-list *ngIf="!selectedCharacters || selectedCharacters.length === 0">
           <md-list-item>None selected yet</md-list-item>
         </md-list>
       </md-card-content>
