@@ -5,7 +5,6 @@ import { Character } from './character';
 @Injectable()
 export class CharacterService {
   characters: Character[] = [];
-  selectedCharacters: Character[] = [];
 
   constructor() {
     this.characters.push(new Character({
@@ -363,29 +362,23 @@ export class CharacterService {
   }
 
   getSelectedCharacters(): Character[] {
-    return this.selectedCharacters;
+    return this.characters
+      .filter(c => c.selected);
   }
 
   getCharacterById(id: number): Character {
     return this.characters
-      .filter(character => character.id === id)
+      .filter(c => c.id === id)
       .pop();
   }
 
-  selectCharacter(id: number): void {
-    const charIndex = this.characters
-                      .findIndex(c => c.id === id);
-    if (charIndex !== undefined) {
-      this.characters[charIndex].selected = true;
-    }
-  }
-
-  deselectCharacter(id: number): void {
-    const charIndex = this.characters
-                      .findIndex(c => c.id === id);
-    if (charIndex !== -1) {
-      this.characters[charIndex].selected = false;
-    }
+  toggleCharacter(id: number): void {
+    this.characters = this.characters.map(c => {
+      if (c.id === id) {
+        c.selected = !c.selected;
+      }
+      return c;
+    });
   }
 
 }
