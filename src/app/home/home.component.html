@@ -45,5 +45,15 @@
         </md-list>
       </md-card-content>
     </md-card>
+    <md-card fxLayout fxLayoutAlign="center">
+      <button
+        md-raised-button
+        fxFlex
+        color="primary"
+        [disabled]="!selectedCharacters || selectedCharacters.length < 2 || selectedCharacters.length > 6"
+        routerLink="playGame">
+        PLAY GAME
+      </button>
+    </md-card>
   </section>
 </section>
