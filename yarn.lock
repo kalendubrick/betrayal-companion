@@ -91,15 +91,7 @@
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.9.tgz#3094f973e18330526256dcd13fcf27609b7abc08"
 
-"@angular/compiler-cli@^2.3.1":
-  version "2.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-2.4.6.tgz#7a34a3114b67ba9f42cb5d65eb81c9cffd54583f"
-  dependencies:
-    "@angular/tsc-wrapped" "0.5.2"
-    minimist "^1.2.0"
-    reflect-metadata "^0.1.2"
-
-"@angular/compiler-cli@^2.4.9":
+"@angular/compiler-cli@^2.3.1", "@angular/compiler-cli@^2.4.9":
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-2.4.9.tgz#8ac4e28c12d2b09a10aabf9cb95c569844b90db3"
   dependencies:
@@ -107,19 +99,11 @@
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
 
-"@angular/compiler@^2.3.1":
-  version "2.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.6.tgz#17236b858f5730eed257d93e90bcbae45e21e0fe"
-
-"@angular/compiler@^2.4.9":
+"@angular/compiler@^2.3.1", "@angular/compiler@^2.4.9":
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.9.tgz#ee159181c4013046598e1d176b45063bddb141f6"
 
-"@angular/core@^2.3.1":
-  version "2.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.6.tgz#4abec78ee035b27e8192acf70409c3dbca24e829"
-
-"@angular/core@^2.4.9":
+"@angular/core@^2.3.1", "@angular/core@^2.4.9":
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.9.tgz#85dca2afa4021be91512c97597702ac8d73092e6"
 
@@ -147,9 +131,9 @@
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.9.tgz#936139a1e0d280394988473a8a11d922d768f89e"
 
-"@angular/router@^3.3.1":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-3.4.6.tgz#df708503f2006a090a2704f5490a9ea1ba9fc9d0"
+"@angular/router@^3.4.9":
+  version "3.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-3.4.9.tgz#2525384124140fefae20bf661262b611f28ffc92"
 
 "@angular/tsc-wrapped@0.5.2", "@angular/tsc-wrapped@^0.5.0":
   version "0.5.2"
