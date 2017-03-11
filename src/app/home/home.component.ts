@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   selectCharacter(characterId: number) {
-    if (this.selectedCharacters.length <= 6) {
+    if (this.selectedCharacters.length < 6) {
       this.characterService.toggleCharacter(characterId);
     }
   }
