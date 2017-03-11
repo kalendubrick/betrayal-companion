@@ -21,7 +21,7 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
